@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
     public void StartGame(){
-        SceneManager.LoadScene("Level 1");
+        Debug.Log("Play Button Working!");
+        SceneManager.LoadScene("Level 0");
     }
     public void QuitGame(){
         Debug.Log("Quit Button Working!");
