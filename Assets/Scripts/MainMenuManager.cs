@@ -5,15 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+
     public void StartGame(){
-        Debug.Log("Play Button Working!");
+        //Debug.Log("Play Button Working!");
         SceneManager.LoadScene("Level 0");
     }
     public void QuitGame(){
-        Debug.Log("Quit Button Working!");
+        //Debug.Log("Quit Button Working!");
         Application.Quit();
     }
-    public void SettingsMenu(){
+    public void SettingsMenu(){;
         SceneManager.LoadScene("Settings");
     }
 }
