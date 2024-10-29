@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Creature : MonoBehaviour
 {    
@@ -8,6 +9,7 @@ public class Creature : MonoBehaviour
     [Header("Creature Settings")]
     [SerializeField] bool isDead = false;
     [SerializeField] string creatureName = "Dinny";
+    [SerializeField] int health = 3;
 
     SpriteRenderer sr;
     Rigidbody2D rb;
@@ -30,7 +32,42 @@ public class Creature : MonoBehaviour
 
     public void Move(Vector3 movement)
     {
-        //transform.localPosition += movement * 12 * Time.deltaTime;
-        rb.velocity = movement * 12;
+        transform.localPosition += movement * 12 * Time.deltaTime;
+        //rb.velocity = movement * 12;
+
     }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage; 
+        Debug.Log("You've Taken Damage! Health: {health}");
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Food")) 
+        {
+            health++;
+            Debug.Log("You've eaten food! Health: {health}");
+        }
+    }
+
+    public int GetHealth()
+    {
+        return health;
+    }
+
+
+    public void Die()
+    {
+        isDead = true;
+        Debug.Log("Creature Died");
+        Destroy(gameObject);
+        SceneManager.LoadScene("MainMenu");
+    }
+    
 }
