@@ -9,7 +9,8 @@ public class PlayerInputHandler : MonoBehaviour
 
 
     // Update is called once per frame
-    void FixedUpdate() 
+    void FixedUpdate()
+        
     {
         Vector3 movement = Vector3.zero; 
         if(Input.GetKey(KeyCode.W))

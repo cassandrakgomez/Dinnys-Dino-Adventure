@@ -10,7 +10,7 @@ public class Shard : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Shard collected!");
+            //Debug.Log("Shard collected!");
             shardProgress.CollectShard();
             Destroy(gameObject);
         }

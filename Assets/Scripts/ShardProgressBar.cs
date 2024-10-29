@@ -15,18 +15,33 @@ public class ShardProgressBar : MonoBehaviour
     [SerializeField] int requiredShards = 5;  // Number of shards needed
     private int currentShards = 0;  // Starting value of shards
 
+    [Header("Shield Settings")]
+    [SerializeField] GameObject Dinny; 
+    [SerializeField] Sprite DinnyShielded;
+    [SerializeField] Sprite DinnySprite;
+    [SerializeField] float shieldDuration = 5f;
+
+    private bool sheildActive = false; 
+    private SpriteRenderer sr;
+
     void Start()
     {
+        sr = Dinny.GetComponent<SpriteRenderer>();
         UpdateShardProgress(); 
     }
 
     public void CollectShard()
     {
-        if (currentShards < requiredShards)  // Increment only if not yet full
+        if (currentShards < requiredShards)
         {
-            Debug.Log("Current Shards: "+ currentShards);
             currentShards++;  // Increase shard count
+            Debug.Log("Current Shards: "+ currentShards);
             UpdateShardProgress();  // Update progress bar
+
+            if(currentShards >= requiredShards)  
+            {
+                ActivateShield();
+            }
         }
     }
 
@@ -35,7 +50,6 @@ public class ShardProgressBar : MonoBehaviour
         float progress = (float)currentShards / requiredShards;
         SetReloadProgress(progress);  // Adjust the shield bar 
 
-        // Show/hide bar objects based on shard count
         bool barActive = currentShards > 0; 
         foreach (GameObject obj in hideableBarObjects)
         {
@@ -45,8 +59,33 @@ public class ShardProgressBar : MonoBehaviour
 
     private void SetReloadProgress(float progress)
     {
-        Debug.Log("Progress: " + progress);  // Log the progress value for debugging
+        //Debug.Log("Progress: " + progress);  
         ShieldBar.localScale = new Vector3(progress, ShieldBar.localScale.y, 1);
     }
+
+    void ActivateShield()
+    {
+        sheildActive = true; 
+        sr.sprite = DinnyShielded; 
+        StartCoroutine(ShieldTimer());
+    }
+
+    IEnumerator ShieldTimer()
+    {
+        yield return new WaitForSeconds(shieldDuration);
+        sheildActive = false; 
+        sr.sprite = DinnySprite; 
+
+        // Reset shard progress
+        currentShards = 0;
+        UpdateShardProgress();
+    }
+
+    //Method to check if the player has a shield for later use
+    public bool HasShield()
+    {
+        return sheildActive; 
+    }
+
 }
 
