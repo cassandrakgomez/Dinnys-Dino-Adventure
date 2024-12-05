@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6722106756180346572}
   - component: {fileID: 5687847086539191986}
   - component: {fileID: 2042918434663584813}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Dinny
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6768f3bbbb5245544a07e2926be5bc76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2.1875, y: 2.1875}
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   creatureName: Dinny
+  health: 3
 --- !u!58 &5687847086539191986
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -133,7 +134,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09, y: -0.16}
+  m_Offset: {x: 0.06, y: -0.16}
   serializedVersion: 2
   m_Radius: 0.73
 --- !u!50 &2042918434663584813

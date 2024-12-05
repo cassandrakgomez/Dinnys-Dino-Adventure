@@ -8,7 +8,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame(){
         //Debug.Log("Play Button Working!");
-        SceneManager.LoadScene("Level 0");
+        SceneManager.LoadScene("Tutorial");
     }
     public void QuitGame(){
         //Debug.Log("Quit Button Working!");

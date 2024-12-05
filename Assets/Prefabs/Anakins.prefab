@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8249859245396215466}
   - component: {fileID: 2694263530050371798}
+  - component: {fileID: 1248891161260269246}
   - component: {fileID: 3083742611212087338}
   m_Layer: 0
   m_Name: Anakins
@@ -85,6 +86,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1248891161260269246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846905256773076675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb09d8c97232a8d4abd2d99653752a35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!58 &3083742611212087338
 CircleCollider2D:
   m_ObjectHideFlags: 0
