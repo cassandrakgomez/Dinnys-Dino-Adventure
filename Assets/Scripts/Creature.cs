@@ -27,20 +27,33 @@ public class Creature : MonoBehaviour
 
     void Update()
     {
-
+         
     }
 
     public void Move(Vector3 movement)
     {
         transform.localPosition += movement * 12 * Time.deltaTime;
-        //rb.velocity = movement * 12;
+        
+        FlipSprite(movement.x);
 
+    }
+
+    private void FlipSprite(float moveDirection)
+    {
+        if (moveDirection > 0)
+        {
+            sr.flipX = true;
+        }
+        if (moveDirection < 0)
+        {
+            sr.flipX = false;
+        }
     }
 
     public void TakeDamage(int damage)
     {
         health -= damage; 
-        Debug.Log("You've Taken Damage! Health: {health}");
+        Debug.Log($"You've Taken Damage! Health: {health}");
         if (health <= 0)
         {
             Die();
@@ -49,10 +62,10 @@ public class Creature : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Food")) 
+        if (collision.CompareTag("Food") && health < 3) 
         {
             health++;
-            Debug.Log("You've eaten food! Health: {health}");
+            Debug.Log($"You've eaten food! Health: {health}");
         }
     }
 

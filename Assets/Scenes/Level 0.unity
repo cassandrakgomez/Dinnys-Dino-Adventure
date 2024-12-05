@@ -6028,6 +6028,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6722106756180346572, guid: 2fc62bbae7865c6499af5f70a1424cba, type: 3}
+      propertyPath: isDead
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7676201936606331378, guid: 2fc62bbae7865c6499af5f70a1424cba, type: 3}
       propertyPath: m_FlipX
       value: 1

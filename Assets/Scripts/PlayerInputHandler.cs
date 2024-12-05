@@ -6,8 +6,6 @@ public class PlayerInputHandler : MonoBehaviour
 {
     [SerializeField] Creature playerDino; 
 
-
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -22,4 +20,13 @@ public class PlayerInputHandler : MonoBehaviour
         }
         playerDino.Move(movement);
     }
+
+    public Vector3 GetMovementInput()
+    {
+        float moveX = Input.GetAxis("Horizontal");
+        float moveY = Input.GetAxis("Vertical");
+        return new Vector3(moveX, moveY, 0);
+    }
+
+
 }
