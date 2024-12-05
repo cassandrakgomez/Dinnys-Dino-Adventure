@@ -2766,6 +2766,18 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3083742611212087338, guid: 6698aa6b470243b419725a7bd6be17ba, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092099638760275748, guid: 6698aa6b470243b419725a7bd6be17ba, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242693775089966062, guid: 6698aa6b470243b419725a7bd6be17ba, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8249859245396215466, guid: 6698aa6b470243b419725a7bd6be17ba, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.8359998
