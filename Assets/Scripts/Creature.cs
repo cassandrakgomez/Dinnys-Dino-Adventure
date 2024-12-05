@@ -10,6 +10,7 @@ public class Creature : MonoBehaviour
     [SerializeField] bool isDead = false;
     [SerializeField] string creatureName = "Dinny";
     [SerializeField] int health = 3;
+    [SerializeField] float jumpForce = 5f;
 
     SpriteRenderer sr;
     Rigidbody2D rb;
@@ -36,6 +37,11 @@ public class Creature : MonoBehaviour
         
         FlipSprite(movement.x);
 
+    }
+
+    public void Jump()
+    {
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
     private void FlipSprite(float moveDirection)

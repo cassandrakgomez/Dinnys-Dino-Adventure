@@ -19,6 +19,14 @@ public class PlayerInputHandler : MonoBehaviour
             movement += new Vector3(1, 0, 0);
         }
         playerDino.Move(movement);
+
+         // Check for jump input
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Jump dectected!");
+            playerDino.Jump();
+        }
+
     }
 
     public Vector3 GetMovementInput()
