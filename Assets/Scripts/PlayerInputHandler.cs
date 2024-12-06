@@ -7,7 +7,7 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] Creature playerDino; 
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         Vector3 movement = Vector3.zero; 
         if (Input.GetKey(KeyCode.A))
@@ -21,9 +21,9 @@ public class PlayerInputHandler : MonoBehaviour
         playerDino.Move(movement);
 
          // Check for jump input
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Jump"))
         {
-            Debug.Log("Jump dectected!");
+            //Debug.Log("Jump dectected!");
             playerDino.Jump();
         }
 
@@ -32,8 +32,8 @@ public class PlayerInputHandler : MonoBehaviour
     public Vector3 GetMovementInput()
     {
         float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
-        return new Vector3(moveX, moveY, 0);
+        //float moveY = Input.GetAxis("Vertical");
+        return new Vector3(moveX, 0, 0);
     }
 
 

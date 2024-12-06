@@ -6,8 +6,8 @@ public class Enemy : MonoBehaviour
 {
     [Header("Enemy Settings")]
     [SerializeField] private int damage = 1; // Amount of damage this enemy does
-    [SerializeField] private int speed = 5; // Speed of the enemy
-    [SerializeField] private int range = 5; // Range of the enemy
+    [SerializeField] float speed = 5; // Speed of the enemy
+    [SerializeField] float range = 5; // Range of the enemy
 
     private Vector2 startPos;
     private Vector2 targetPos;
@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
         Vector2 currentLoc = transform.position;
         transform.position = Vector2.MoveTowards(currentLoc, targetPos, speed * Time.deltaTime);
         if (Vector2.Distance(currentLoc, targetPos) < 0.1f){
-            
+
             if(pos_check){
                 targetPos = new Vector2(startPos.x + range, startPos.y);
             }

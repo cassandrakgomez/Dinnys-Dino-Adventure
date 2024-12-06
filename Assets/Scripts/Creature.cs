@@ -10,7 +10,14 @@ public class Creature : MonoBehaviour
     [SerializeField] bool isDead = false;
     [SerializeField] string creatureName = "Dinny";
     [SerializeField] int health = 3;
+
+    [Header("Jump Settings")]
     [SerializeField] float jumpForce = 5f;
+    [SerializeField] Transform groundCheck;
+    [SerializeField] float groundCheckRadius = 0.2f;
+    [SerializeField] LayerMask groundLayer;
+
+    [SerializeField] bool isGrounded = false;
 
     SpriteRenderer sr;
     Rigidbody2D rb;
@@ -28,7 +35,7 @@ public class Creature : MonoBehaviour
 
     void Update()
     {
-         
+         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 
     public void Move(Vector3 movement)
@@ -41,7 +48,22 @@ public class Creature : MonoBehaviour
 
     public void Jump()
     {
+    // Ensure the player is grounded before jumping
+    if (isGrounded)
+    {
+        // Clear any existing vertical velocity
+        rb.velocity = new Vector2(rb.velocity.x, 0f);
+
+        // Apply the jump force
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
+        // Log the jump for debugging
+        Debug.Log($"Jumping! Force: {jumpForce}, Current Velocity: {rb.velocity}");
+    }
+    else
+    {
+        Debug.Log("Cannot jump - not grounded!");
+    }
     }
 
     private void FlipSprite(float moveDirection)

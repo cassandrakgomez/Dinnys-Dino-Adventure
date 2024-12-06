@@ -2471,6 +2471,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1602417094}
     m_Modifications:
+    - target: {fileID: 2042918434663584813, guid: 2fc62bbae7865c6499af5f70a1424cba, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3374401346853314759, guid: 2fc62bbae7865c6499af5f70a1424cba, type: 3}
       propertyPath: m_Name
       value: Dinny
@@ -2525,6 +2529,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4861522680766968171, guid: 2fc62bbae7865c6499af5f70a1424cba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687847086539191986, guid: 2fc62bbae7865c6499af5f70a1424cba, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722106756180346572, guid: 2fc62bbae7865c6499af5f70a1424cba, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7676201936606331378, guid: 2fc62bbae7865c6499af5f70a1424cba, type: 3}
