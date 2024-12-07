@@ -17,7 +17,7 @@ public class Creature : MonoBehaviour
     [SerializeField] float groundCheckRadius = 0.2f;
     [SerializeField] LayerMask groundLayer;
 
-    [SerializeField] bool isGrounded = false;
+    [SerializeField] bool isGrounded = true;
 
     SpriteRenderer sr;
     Rigidbody2D rb;
