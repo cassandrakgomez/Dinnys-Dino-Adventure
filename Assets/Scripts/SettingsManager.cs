@@ -6,7 +6,11 @@ using UnityEngine.SceneManagement;
 public class SettingsManager : MonoBehaviour
 {
     public void ReturnToStart(){
-        Debug.Log("Back button working!");
+        //Debug.Log("Back button working!");
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void SetFullScreen (bool isFullScreen){
+        Screen.fullScreen = isFullScreen;
     }
 }
