@@ -7,8 +7,8 @@ public class Creature : MonoBehaviour
 {    
 
     [Header("Creature Settings")]
-    [SerializeField] bool isDead = false;
-    [SerializeField] string creatureName = "Dinny";
+    
+    //[SerializeField] string creatureName = "Dinny";
     [SerializeField] int health = 3;
 
     [Header("Jump Settings")]
@@ -21,6 +21,7 @@ public class Creature : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip audioClip;
 
+    public bool isDead = false;
     [SerializeField] bool isGrounded = true;
 
     SpriteRenderer sr;
@@ -63,8 +64,8 @@ public class Creature : MonoBehaviour
         // Apply the jump force
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
-        // Log the jump for debugging
-        Debug.Log($"Jumping! Force: {jumpForce}, Current Velocity: {rb.velocity}");
+        // debugging
+        //Debug.Log($"Jumping! Force: {jumpForce}, Current Velocity: {rb.velocity}");
     }
     else
     {

@@ -19,7 +19,11 @@ public class ShardProgressBar : MonoBehaviour
     [SerializeField] GameObject Dinny; 
     [SerializeField] Sprite DinnyShielded;
     [SerializeField] Sprite DinnySprite;
-    [SerializeField] float shieldDuration = 5f;
+    [SerializeField] float shieldDuration = 4f;
+
+    [Header("Audio Settings")]
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip audioClip;
 
     private bool sheildActive = false; 
     private SpriteRenderer sr;
@@ -35,8 +39,11 @@ public class ShardProgressBar : MonoBehaviour
         if (currentShards < requiredShards)
         {
             currentShards++;  // Increase shard count
-            Debug.Log("Current Shards: "+ currentShards);
+            //Debug.Log("Current Shards: "+ currentShards);
             UpdateShardProgress();  // Update progress bar
+
+            // Play sound effect
+            audioSource.PlayOneShot(audioClip);
 
             if(currentShards >= requiredShards)  
             {

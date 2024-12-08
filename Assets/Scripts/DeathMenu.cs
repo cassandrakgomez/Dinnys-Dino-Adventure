@@ -29,11 +29,11 @@ public class DeathMenu : MonoBehaviour
     }
 
     public void TryAgain()
-    {
-        Time.timeScale = 1f; 
-        
-        SceneManager.LoadScene(flag.LastScene); 
-    }
+{
+    Time.timeScale = 1f; // Reset time scale to normal speed
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reload the current scene
+}
+
 
     public void QuitGame()
     {

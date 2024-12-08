@@ -35,17 +35,13 @@ public class Flag : MonoBehaviour
         int nextScene = currentScene + 1;
 
         if(nextScene < SceneManager.sceneCountInBuildSettings){
-            PlayerPrefs.SetInt("LastScene", nextScene);
-            PlayerPrefs.Save();
 
-            int LastScene = PlayerPrefs.GetInt("LastScene",0);
             SceneManager.LoadScene(nextScene);
         }
         else{
             SceneManager.LoadScene("MainMenu");
         }
 
-        
     }
 
 }
