@@ -17,6 +17,10 @@ public class Creature : MonoBehaviour
     [SerializeField] float groundCheckRadius = 0.2f;
     [SerializeField] LayerMask groundLayer;
 
+    [Header("Audio Settings")]
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip audioClip;
+
     [SerializeField] bool isGrounded = true;
 
     SpriteRenderer sr;
@@ -102,7 +106,8 @@ public class Creature : MonoBehaviour
         if (collision.CompareTag("Food") && health < 3) 
         {
             health++;
-            Debug.Log($"You've eaten food! Health: {health}");
+            audioSource.PlayOneShot(audioClip);
+            //Debug.Log($"You've eaten food! Health: {health}");
         }
     }
 
@@ -115,9 +120,15 @@ public class Creature : MonoBehaviour
     public void Die()
     {
         isDead = true;
-        Debug.Log("Creature Died");
+        //Debug.Log("Creature Died");
+
+        DeathMenu deathMenu = FindObjectOfType<DeathMenu>();
+        if (deathMenu != null)
+        {
+            deathMenu.TriggerGameOver();
+        }
         Destroy(gameObject);
-        SceneManager.LoadScene("MainMenu");
+        
     }
     
 }
