@@ -81,7 +81,7 @@ public class ShardProgressBar : MonoBehaviour
         UpdateShardProgress();
     }
 
-    //Method to check if the player has a shield for later use
+    //Method to check if the player has a shield for later
     public bool HasShield()
     {
         return sheildActive; 

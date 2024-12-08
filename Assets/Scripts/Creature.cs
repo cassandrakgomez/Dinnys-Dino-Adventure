@@ -22,15 +22,17 @@ public class Creature : MonoBehaviour
     SpriteRenderer sr;
     Rigidbody2D rb;
 
+    private ShardProgressBar shardProgressBar;
+
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
-    
+
     void Start()
     {
-        //Debug.Log("Creature Start");
+        shardProgressBar = FindObjectOfType<ShardProgressBar>();
     }
 
     void Update()
@@ -80,6 +82,13 @@ public class Creature : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        // Check if shield is active
+        if (shardProgressBar != null && shardProgressBar.HasShield())
+        {
+            Debug.Log("Shield Active! No Damage Taken!");
+            return;
+        }
+        // Take damage if not shielded
         health -= damage; 
         Debug.Log($"You've Taken Damage! Health: {health}");
         if (health <= 0)
