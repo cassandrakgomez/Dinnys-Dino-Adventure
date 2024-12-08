@@ -28,6 +28,13 @@ public class DeathMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu"); 
     }
 
+    public void TryAgain()
+    {
+        Time.timeScale = 1f; 
+        
+        SceneManager.LoadScene(flag.LastScene); 
+    }
+
     public void QuitGame()
     {
         Application.Quit(); 

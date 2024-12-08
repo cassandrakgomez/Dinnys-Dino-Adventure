@@ -30,11 +30,22 @@ public class Flag : MonoBehaviour
         }
     }
 
-    private void MoveOn(){
+    public void MoveOn(){
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         int nextScene = currentScene + 1;
 
-        SceneManager.LoadScene(nextScene);
+        if(nextScene < SceneManager.sceneCountInBuildSettings){
+            PlayerPrefs.SetInt("LastScene", nextScene);
+            PlayerPrefs.Save();
+
+            int LastScene = PlayerPrefs.GetInt("LastScene",0);
+            SceneManager.LoadScene(nextScene);
+        }
+        else{
+            SceneManager.LoadScene("MainMenu");
+        }
+
+        
     }
 
 }

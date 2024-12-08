@@ -127,7 +127,7 @@ public class Creature : MonoBehaviour
         {
             deathMenu.TriggerGameOver();
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
         
     }
     
