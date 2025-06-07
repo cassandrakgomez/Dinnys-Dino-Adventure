@@ -31,10 +31,3 @@ Game Title is a 2D Platformer game where players must go through obstacles and a
 **Professor Samuel Ang:** For leading our game development course at UTSA.
 
 **Matthew Jimenez and Dylan Cordes:** For playtesting and feedback.
-
-# 🌟 Connect
-Have questions or feedback? Reach out to me:
-
-Email: cassandrakgomez@gmail.com
-
-GitHub: cassandrakgomez
